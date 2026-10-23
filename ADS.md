@@ -1,15 +1,16 @@
 # Adsterra — bloodstrike.wiki
 
-Native Banner is reserved for the homepage and guide pages, immediately after Quick Answer (`afterQuickAnswer` in `sites/bloodstrike/ads.config.ts`). The 404 page does not include the slot.
+Native Banner is wired for the homepage and guide pages, immediately after Quick Answer (`afterQuickAnswer` in `sites/bloodstrike/ads.config.ts`). The script is rendered once on those pages. The 404 page does not include the slot.
 
-The zone is a placeholder. `id` and `scriptSrc` are empty, so `resolveAdPlacement` is inactive and the layout emits no script.
+This zone uses a full script URL. There is no `/invoke.js` suffix, and `invokeBase` stays empty so the old host is not hardcoded.
 
 | Field | Value | Used in the script? |
 | --- | --- | --- |
-| Zone key | empty | No script until a real id is set |
-| Script src | empty | No |
-| Format | `native-banner` | Declared only |
+| Zone key | `467253c4fc76c8555648eab896f019f4` | Yes. `afterQuickAnswer.id`, and the container id `container-467253c4fc76c8555648eab896f019f4` |
+| Script src | `https://bauval.org/21/467253c4fc76c8555648eab896f019f4` | Yes. Full `afterQuickAnswer.scriptSrc` |
+| Website ID | `6144484` | No. Ops note only |
+| Placement ID | `31881711` | No. Ops note only |
 
-Do not paste a zone key from another game. Adult and sensitive categories stay off.
+Adult and sensitive categories stay off.
 
-`analytics.gaId` in `sites/bloodstrike/site.config.ts` is an empty string. The base layout loads gtag only when that string is non-empty.
+`analytics.gaId` in `sites/bloodstrike/site.config.ts` is an empty string. The base layout loads gtag only when that string is non-empty. There is no Google site-verification meta tag. Put a real GA4 measurement id in `gaId` when one exists. Until then, Analytics stays off.
