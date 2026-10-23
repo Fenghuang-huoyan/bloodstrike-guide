@@ -1,0 +1,33 @@
+{
+  "checked": "23 Oct 2026",
+  "groups": [
+    {
+      "id": "active-placeholder",
+      "title": "Active codes — none verified",
+      "intro": "This row is a scaffold placeholder dated 23 Oct 2026. It is not a Blood Strike redeem code. Tracker sites and top-up pages publish strings that change without notice. Nothing in the Steam store text or the 20 Oct 2026 official update post was a paste-in code. Do not type the dash into the game.",
+      "rows": [
+        {
+          "code": "—",
+          "reward": "Unknown",
+          "status": "placeholder",
+          "statusLabel": "Placeholder",
+          "note": "23 Oct 2026. No active code was confirmed in a client for this build. Replace this row only after you redeem a string successfully, and write down the reward the client actually gave."
+        }
+      ]
+    },
+    {
+      "id": "expired-placeholder",
+      "title": "Expired codes — none filed",
+      "intro": "Filing a dead string this site has not seen would invent a code. Expired rows stay empty until a code was real on an earlier check and then failed.",
+      "rows": [
+        {
+          "code": "—",
+          "reward": "—",
+          "status": "placeholder",
+          "statusLabel": "Placeholder",
+          "note": "23 Oct 2026. No expired code is listed, because none was verified here first. In-game event gifts from the 20 Oct 2026 post (login Gold, draws, a rally skin) are not codes."
+        }
+      ]
+    }
+  ]
+}

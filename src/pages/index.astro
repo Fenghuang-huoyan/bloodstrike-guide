@@ -1,0 +1,262 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@framework/layouts/BaseLayout.astro';
+import QuickAnswer from '@framework/components/QuickAnswer.astro';
+import AdSlot from '@framework/components/AdSlot.astro';
+import FaqList from '@framework/components/FaqList.astro';
+import { loadData } from '@framework/lib/content';
+import { siteConfig } from '@site/site.config';
+import { faqJsonLd, websiteJsonLd } from '@framework/lib/seo';
+
+const meta = loadData<{
+  release: string;
+  price: string;
+  priceNote: string;
+  players: string;
+  playersNote: string;
+  reviews: string;
+  reviewsNote: string;
+  modes: string;
+  modesNote: string;
+  platforms: string;
+}>('meta');
+
+const faq = loadData<{ q: string; a: string; featured?: boolean }[]>('faq');
+const pages = (await getCollection('pages')).sort((a, b) => a.data.order - b.data.order);
+
+const art = {
+  header: '/images/official/steam/header.jpg',
+  hero: '/images/official/steam/library-hero.jpg',
+  hero2x: '/images/official/steam/library-hero-2x.jpg',
+  capsule: '/images/official/steam/capsule-616x353.jpg',
+  corridor: '/images/official/steam/ss-00.jpg',
+  squad: '/images/official/steam/ss-01.jpg',
+  street: '/images/official/steam/ss-02.jpg',
+  heavy: '/images/official/steam/ss-03.jpg',
+  glide: '/images/official/steam/ss-04.jpg',
+  emblem: '/images/official/steam/ss-05.jpg',
+  lineup: '/images/official/steam/ss-06.jpg',
+};
+
+const guideArt: Record<string, string> = {
+  codes: art.capsule,
+  strikers: art.lineup,
+  weapons: art.corridor,
+  'beginner-guide': art.street,
+  modes: art.glide,
+  faq: art.header,
+  about: art.hero,
+};
+
+const doors = [
+  {
+    href: '/codes',
+    num: '01',
+    title: 'Codes',
+    text: 'No live code was verified on 23 Oct 2026. The table is a dated placeholder. Check the client before you paste anything.',
+    image: art.capsule,
+  },
+  {
+    href: '/strikers',
+    num: '02',
+    title: 'Strikers',
+    text: 'Active and passive, in Steam’s words. VOX’s kit is quoted from official posts. The rest of the roster is not invented.',
+    image: art.lineup,
+  },
+  {
+    href: '/weapons',
+    num: '03',
+    title: 'Weapons',
+    text: 'Loadouts, plus the reload and damage lines NetEase printed on 20 Oct 2026. Not a tier list.',
+    image: art.corridor,
+  },
+  {
+    href: '/beginner-guide',
+    num: '04',
+    title: 'First match',
+    text: 'Windows install, the New Player Academy, and the drop labels the official site actually uses.',
+    image: art.street,
+  },
+  {
+    href: '/modes',
+    num: '05',
+    title: 'Modes',
+    text: 'Battle Royale, Squad Fight, and Hot Zone, then the playlists named in the latest official post.',
+    image: art.glide,
+  },
+  {
+    href: '/faq',
+    num: '06',
+    title: 'FAQ',
+    text: 'Free-to-play, cross-play, controller support, languages, and who this site is not.',
+    image: art.emblem,
+  },
+];
+
+const stills = [
+  { src: art.corridor, caption: 'First-person rifle' },
+  { src: art.squad, caption: 'Squad lineup' },
+  { src: art.street, caption: 'City street' },
+  { src: art.heavy, caption: 'Heavy weapon' },
+  { src: art.glide, caption: 'Wingsuit glide' },
+  { src: art.emblem, caption: 'Squad emblem' },
+  { src: art.lineup, caption: 'Five operators' },
+];
+---
+<BaseLayout
+  title={siteConfig.homeTitle}
+  description={siteConfig.homeDescription}
+  jsonLd={[
+    websiteJsonLd(),
+    faqJsonLd(faq.filter((item) => item.featured).map((item) => ({ q: item.q, a: item.a }))),
+  ]}
+>
+  <main id="content">
+    <div class="shell">
+      <p class="tape">
+        <span>Fan guide · not affiliated with NetEase</span>
+        <span>Steam App {siteConfig.steamAppId}</span>
+        <span>{siteConfig.version.label}</span>
+      </p>
+
+      <section class="town-hero">
+        <img
+          class="hero-art"
+          src={siteConfig.art.hero}
+          srcset={`${art.hero} 1920w, ${art.hero2x} 3840w`}
+          sizes="(min-width: 1536px) 1536px, 100vw"
+          alt={siteConfig.art.heroAlt}
+          width="1920"
+          height="620"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="hero-panel">
+          <p class="kicker">{siteConfig.developer} · {meta.price} on Steam · released {meta.release}</p>
+          <h1>A field manual for Blood Strike.</h1>
+          <p class="lede">
+            English pages for <em>Blood Strike</em>: code status, Strikers, weapons, the first match, and the modes Steam actually names.
+            The client is ahead of any static page. Where a number is missing, the page says so.
+          </p>
+          <div class="cta-row">
+            <a class="btn" href="/codes">Codes</a>
+            <a class="btn ghost" href="/beginner-guide">First match</a>
+            <a class="btn ghost" href={siteConfig.steamUrl}>View on Steam</a>
+          </div>
+          <p class="version-note">{siteConfig.version.detail}</p>
+        </div>
+      </section>
+      <p class="art-credit">
+        Library hero, capsules, headers, and screenshots are official Steam store assets for App {siteConfig.steamAppId}, saved from the store CDN.
+        Credits and source URLs: <a href="/images/official/steam/ATTRIBUTION.txt">ATTRIBUTION.txt</a>.
+      </p>
+
+      <section class="section">
+        <h2>Six doors</h2>
+        <p class="section-intro">
+          Open the page that matches the problem: a code you have not verified, a Striker kit, a gun the last patch touched, or a mode name.
+        </p>
+        <div class="door-grid">
+          {doors.map((door) => (
+            <a class="door" href={door.href}>
+              <span class="card-art">
+                <img src={door.image} alt="" width="600" height="338" decoding="async" />
+                <span class="num">{door.num}</span>
+              </span>
+              <span class="card-copy">
+                <h3>{door.title}</h3>
+                <p>{door.text}</p>
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section class="section" aria-label="Official Steam screenshots">
+        <h2>The store’s own frames</h2>
+        <p class="section-intro">
+          Seven screenshots from the Steam page. They show the rifle view, the squad, and a glide. They are not a map.
+        </p>
+        <div class="still-row">
+          {stills.map((still) => (
+            <figure>
+              <img src={still.src} alt="" width="600" height="338" loading="lazy" decoding="async" />
+              <figcaption>{still.caption}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </section>
+
+      <section class="stat-row" aria-label="Steam figures">
+        <div class="stat"><strong>{meta.price}</strong><span>{meta.priceNote}</span></div>
+        <div class="stat"><strong>{meta.reviews}</strong><span>{meta.reviewsNote}</span></div>
+        <div class="stat"><strong>{meta.players}</strong><span>{meta.playersNote}</span></div>
+        <div class="stat"><strong>{meta.modes}</strong><span>{meta.modesNote}</span></div>
+      </section>
+
+      <section class="section home-quick">
+        <QuickAnswer
+          sentences={[
+            'Blood Strike is NetEase Games’ free-to-play shooter on Steam (AppID 3199170), released 13 March 2025 for Windows. The store lists in-app purchases, cross-platform multiplayer, and partial controller support.',
+            'The short description names Battle Royale, Squad Fight, and Hot Zone, and Strikers with a unique active and passive. Drones and shield walls are the store’s examples. Gliding is in the controls pitch.',
+            'No redeem code was confirmed for this build on 23 Oct 2026. The codes page is a dated placeholder. Do not paste the placeholder into the game. In-game event gifts are not website coupons.',
+            'English store reviews that day: Very Positive recently (80% of 825 in 30 days) and Mostly Positive for English overall (76% of 7,197). SteamCharts showed 2,771 players at the fetch, with an all-time peak of 7,747.',
+          ]}
+        />
+        <AdSlot name="afterQuickAnswer" />
+      </section>
+
+      <section class="section">
+        <h2>The pages</h2>
+        <p class="section-intro">
+          English only. A line from the Steam page or an official update is labeled with its date. A blank cell is a blank cell. Verify codes in the client.
+        </p>
+        <div class="card-grid">
+          {pages.map((page) => (
+            <a class="guide-card" href={`/${page.id}`}>
+              <span class="card-art">
+                <img src={guideArt[page.id] ?? art.header} alt="" width="600" height="338" loading="lazy" decoding="async" />
+              </span>
+              <span class="card-copy">
+                <span class="section-tag">{page.data.section}</span>
+                <h3>{page.data.h1}</h3>
+                <p>{page.data.description}</p>
+              </span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="scope">
+          <div>
+            <h2>What this wiki is for</h2>
+            <p>
+              The store page and the news posts live at {siteConfig.databases.map((db, i) => (
+                <>
+                  <a href={db.href}>{db.label}</a>
+                  {i < siteConfig.databases.length - 1 ? ', ' : ''}
+                </>
+              ))}. This site is the skim: the first loop, an honest code table, and the systems those sources actually name.
+            </p>
+            <p>
+              Live modes and monthly gifts move faster than a static page. If a playlist or a reward looks old, the news index is the first place to look, then the client.
+            </p>
+          </div>
+          <div>
+            <h2>In Steam’s words</h2>
+            <p>
+              {siteConfig.developer} shipped Blood Strike on Steam on {meta.release}. The short description calls it a battle royale you play with friends, with Strikers, Squad Fight, and Hot Zone. Platforms on the API: {meta.platforms}. The support mail on the store page is {siteConfig.supportEmail}.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section home-faq">
+        <h2>Short answers</h2>
+        <FaqList featuredOnly />
+        <p><a class="text-link" href="/faq">All FAQ</a></p>
+      </section>
+    </div>
+  </main>
+</BaseLayout>
