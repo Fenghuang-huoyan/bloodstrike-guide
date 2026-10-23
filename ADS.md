@@ -13,4 +13,4 @@ This zone uses a full script URL. There is no `/invoke.js` suffix, and `invokeBa
 
 Adult and sensitive categories stay off.
 
-`analytics.gaId` in `sites/bloodstrike/site.config.ts` is an empty string. The base layout loads gtag only when that string is non-empty. There is no Google site-verification meta tag. Put a real GA4 measurement id in `gaId` when one exists. Until then, Analytics stays off.
+`analytics.gaId` in `sites/bloodstrike/site.config.ts` is `G-YZ05QF1DFN`. The base layout loads that GA4 id with gtag on every page, including 404. There is no Google site-verification meta tag.

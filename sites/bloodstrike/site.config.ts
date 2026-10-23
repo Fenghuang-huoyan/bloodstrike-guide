@@ -21,7 +21,7 @@ export const siteConfig = {
   homeDescription:
     'Unofficial English Blood Strike wiki for Steam AppID 3199170. Dated redeem-code status, Striker abilities, weapon notes, the beginner loop, and mode explainers for bloodstrike.wiki. Not affiliated with NetEase Games.',
   analytics: {
-    gaId: '',
+    gaId: 'G-YZ05QF1DFN',
   },
   art: {
     hero: '/images/official/steam/library-hero.jpg',

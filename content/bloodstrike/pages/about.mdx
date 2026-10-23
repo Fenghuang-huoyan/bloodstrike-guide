@@ -9,7 +9,7 @@ quickAnswer:
   - "Blood Strike Guide is a fan site aimed at https://bloodstrike.wiki. It is not affiliated with NetEase Games, Valve, or Steam."
   - "Pages are English on purpose. The Steam language list is wider than this wiki."
   - "Artwork is official Steam store art for AppID 3199170, stored with the site. Credits are in the attribution file next to the images."
-  - "Google Analytics is not loaded. One Adsterra Native Banner loads after Quick Answer on the homepage and guide pages, and not on the 404 page. The codes table does not contain a live redeem code."
+  - "Google Analytics loads with measurement id G-YZ05QF1DFN. One Adsterra Native Banner loads after Quick Answer on the homepage and guide pages, and not on the 404 page. The codes table does not contain a live redeem code."
 sources:
   - label: "Steam store — Blood Strike"
     url: "https://store.steampowered.com/app/3199170/Blood_Strike/"
@@ -54,7 +54,7 @@ Hero, capsules, headers, and screenshots are official Steam store assets for App
 
 The site is static. It has no accounts and does not ask for your Blood Strike login.
 
-`analytics.gaId` is empty, so Google Analytics is not loaded. There is no measurement ID yet.
+`analytics.gaId` is `G-YZ05QF1DFN`. The base layout loads that GA4 measurement id with gtag on every page, including 404.
 
 An Adsterra Native Banner named `afterQuickAnswer` loads once, immediately under Quick Answer, on the homepage and on guide pages. The script is the zone Adsterra issued for bloodstrike.wiki. The 404 page does not include the slot. Adult and sensitive categories stay off.
 
@@ -64,4 +64,4 @@ An Adsterra Native Banner named `afterQuickAnswer` loads once, immediately under
 - Striker kits for anyone other than VOX, whose skills come from the 1 Sep 2026 post and the 20 Oct 2026 tuning note. HANK and JET are names only.
 - A weapon table that is more than the 20 Oct 2026 adjustment lines.
 - Public player counts, circle timers, and Hot Zone’s objective.
-- DNS, hosting, and a GA4 id. Analytics stays off until `analytics.gaId` is set.
+- DNS and hosting. The GA4 measurement id is set. This repository does not deploy.
