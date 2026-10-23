@@ -1,0 +1,60 @@
+Official Steam store assets for Blood Strike (AppID 3199170).
+Self-hosted so the wiki does not hotlink the Steam CDN at page-view time.
+The bytes were downloaded from the Steam store CDN on 23 Oct 2026.
+Fan site: not affiliated with NetEase Games, Valve, or Steam.
+Store page: https://store.steampowered.com/app/3199170/Blood_Strike/
+
+library-hero.jpg
+  Steam library hero, 1920x620
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3199170/library_hero.jpg
+
+library-hero-2x.jpg
+  Steam library hero, 3840x1240
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3199170/library_hero_2x.jpg
+
+library-header.jpg
+  Steam library header, 460x215
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3199170/library_header.jpg
+
+header.jpg
+  Classic store header, 460x215
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3199170/header.jpg
+
+capsule-616x353.jpg
+  Store capsule, 616x353 (hashed path; the unhashed capsule_616x353.jpg URL 404s)
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3199170/eeab00314314192f57bbdf91b91f8b871f890ce5/capsule_616x353.jpg
+
+capsule-231x87.jpg
+  Small store capsule, 231x87 (hashed path)
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3199170/f7f59e110f6bcefd4b5856ac41cf5db43690a642/capsule_231x87.jpg
+
+Screenshots are the 600x337 store thumbnails from appdetails on 23 Oct 2026 (t=1788924245).
+Full-size 1920x1080 files exist at the same paths with .1920x1080.jpg.
+
+ss-00.jpg
+  First-person rifle view down a stone corridor, with a red objective marker.
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3199170/ss_b3376dbb30ef11185de3384d9d68fe94514afaf0.600x338.jpg?t=1788924245
+
+ss-01.jpg
+  A squad of operators, one with large mechanical wings, posed in formation.
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3199170/ss_60038417c2965a9360384233ace2b26253007f7c.600x338.jpg?t=1788924245
+
+ss-02.jpg
+  Operators on a city street beside a gold vehicle.
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3199170/ss_0551a77e954200b1404af9f57e7081455023d9df.600x338.jpg?t=1788924245
+
+ss-03.jpg
+  An operator with a heavy weapon in a dense city.
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3199170/ss_499972d3c1a3ea1b6ebec507f97afd52a00d944e.600x338.jpg?t=1788924245
+
+ss-04.jpg
+  A wingsuit glide over a dense city. Steam’s feature text also names gliding.
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3199170/ss_66d0340a8bc04053893d1d0fe949b6256dfbecb8.600x338.jpg?t=1788924245
+
+ss-05.jpg
+  Three operators under a large gold emblem.
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3199170/ss_54dc66a30f4267ef0de9f8e520710234e4b30c8b.600x338.jpg?t=1788924245
+
+ss-06.jpg
+  Five operators posed on a raised platform.
+  https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/3199170/ss_ba8595eca47aa33be473ba10db10a65da59c0ae2.600x338.jpg?t=1788924245

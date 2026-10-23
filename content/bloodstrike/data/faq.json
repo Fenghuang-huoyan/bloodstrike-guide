@@ -1,0 +1,46 @@
+[
+  {
+    "q": "Is Blood Strike free on Steam?",
+    "a": "Yes. The Steam appdetails payload on 23 October 2026 set is_free to true for AppID 3199170. The same payload lists in-app purchases. This site does not sell currency, accounts, or top-ups.",
+    "featured": true
+  },
+  {
+    "q": "Where do I enter a redeem code?",
+    "a": "No click-path was printed on the Steam store page or in the 20 October 2026 official update post checked for this site. The codes table is a dated placeholder and does not contain a live string. Look in your own client for a code, gift, or redeem field, and trust the label there. This website cannot redeem a code for you.",
+    "featured": true
+  },
+  {
+    "q": "What is a Striker?",
+    "a": "Steam’s short description says Blood Strike has a wide range of playable Strikers, each with a unique active and passive ability, including examples such as drones and shield walls. The 1 September 2026 official post introduces VOX (Sonic Overdrive and Sonic Grenade). The 20 October 2026 post also names HANK and JET in a graphics note, without printing their kits. This guide does not invent the rest of the roster.",
+    "featured": true
+  },
+  {
+    "q": "Which modes does the store name?",
+    "a": "The Steam short description names Battle Royale, Squad Fight, and Hot Zone. The 20 October 2026 official update also names Nightmare Trial, Hot Zone, Arms Race, Weapon Master, Team Deathmatch, Free For All, and Big Head, plus a map called Graffiti District scheduled for 5 November. Player counts and round timers are not in the Steam about text. If the client menu and this page disagree, trust the client.",
+    "featured": true
+  },
+  {
+    "q": "Can I play on Mac or Linux?",
+    "a": "The Steam appdetails platforms field on 23 October 2026 lists Windows only. Minimum and recommended specs both say Windows 10. Mac and Linux are not listed."
+  },
+  {
+    "q": "Is there cross-play with phone players?",
+    "a": "Steam’s category list includes Cross-Platform Multiplayer. The official homepage links a Google Play listing (com.netease.newspike) and an Apple App Store listing (id 1637059453), and a PC download. The exact account-link clicks are not in the Steam about text, so this guide does not invent them. Follow the prompt in your client."
+  },
+  {
+    "q": "Does a controller work?",
+    "a": "Steam lists Partial Controller Support, not full controller support. The 20 October 2026 update post says an Auto Sprint option can start Tactical Sprint when the left stick is pushed into the trigger range. That is one setting, not a promise that every action is on a pad."
+  },
+  {
+    "q": "Which languages does the Steam version include?",
+    "a": "The appdetails language list on 23 October 2026 names English, Arabic, Indonesian, Portuguese - Portugal, Russian, Simplified Chinese, Thai, Vietnamese, and Spanish - Latin America. Full audio is marked for English, Portuguese - Portugal, Simplified Chinese, and Spanish - Latin America. This guide is written in English."
+  },
+  {
+    "q": "What PC do I need?",
+    "a": "Steam’s minimum on 23 October 2026: Windows 10, Intel i3-540 or AMD Athlon 200GE, 4 GB RAM, Intel HD 4000 or AMD Radeon R5 220, DirectX 11, broadband, 30 GB. Recommended: Windows 10, Intel Core i5-4460, 8 GB RAM, NVIDIA GeForce GTX 960, DirectX 11, broadband, 30 GB. Required age on the API is 0."
+  },
+  {
+    "q": "Is this site official?",
+    "a": "No. bloodstrike.wiki is a fan guide. It is not affiliated with NetEase Games, Valve, or Steam. Support mail is bloodstrike@global.netease.com, which is the address on the Steam store page and the official site. That mailbox is NetEase’s, not this wiki’s. The site does not process top-ups or account recovery."
+  }
+]
