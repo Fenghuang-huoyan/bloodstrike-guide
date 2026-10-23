@@ -20,12 +20,12 @@ Node 22. The build is a static Astro site (`dist/`). `astro.config.mjs` sets `si
 | Layer | Path | Role |
 | --- | --- | --- |
 | Site config | `sites/bloodstrike/site.config.ts` | Domain, Steam AppID, theme, nav |
-| Ads | `sites/bloodstrike/ads.config.ts` | Adsterra Native Banner placeholder after Quick Answer |
+| Ads | `sites/bloodstrike/ads.config.ts` | Adsterra Native Banner after Quick Answer |
 | Active site | `sites/active` → `bloodstrike` | What the build reads |
 | Framework | `framework/` | Layout, SEO, ad slot |
 | Content | `content/bloodstrike/` | Guide pages and JSON |
 | Routes | `src/pages/` | Home, guide slug, 404 |
 
-`analytics.gaId` is empty, so gtag is not injected. The Adsterra zone id is empty, so no ad script is injected. The 404 page has no ad slot.
+`analytics.gaId` is empty, so gtag is not injected. The homepage and guide pages load one Adsterra Native Banner after Quick Answer. The 404 page has no ad slot. See [ADS.md](ADS.md).
 
 Steam art lives in `public/images/official/steam/` with `ATTRIBUTION.txt`. This repository does not buy a domain, edit DNS, or deploy.

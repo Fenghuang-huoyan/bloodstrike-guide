@@ -1,13 +1,13 @@
 /**
  * Adsterra Native Banner, directly after Quick Answer on the homepage and guide pages.
  *
- * Placeholder until a zone is issued for bloodstrike.wiki. Leave `id` and
- * `scriptSrc` empty. Do not paste a key or host from another game.
+ * This zone's invoke URL has no `/invoke.js` suffix. Set `scriptSrc` to the
+ * full script URL Adsterra issued for this site. Do not paste a key or host
+ * from another game.
  *
- * When `scriptSrc` is empty, the fallback is `${invokeBase}/${id}/invoke.js`.
- * With an empty id, resolveAdPlacement stays inactive and no script is emitted.
- * Adult and sensitive categories stay off. Only afterQuickAnswer exists.
- * The 404 page does not render a slot.
+ * When `scriptSrc` is empty, the fallback is still `${invokeBase}/${id}/invoke.js`.
+ * Adult and sensitive categories stay off. Only afterQuickAnswer exists, so the
+ * script is emitted once per homepage and guide page. The 404 page does not render a slot.
  */
 export type AdSlotConfig = {
   id: string;
@@ -20,9 +20,9 @@ export type AdSlotConfig = {
 
 const slots = {
   afterQuickAnswer: {
-    id: '',
+    id: '467253c4fc76c8555648eab896f019f4',
     format: 'native-banner',
-    scriptSrc: '',
+    scriptSrc: 'https://bauval.org/21/467253c4fc76c8555648eab896f019f4',
   },
 } as const satisfies Record<string, AdSlotConfig>;
 
