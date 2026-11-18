@@ -1,31 +1,31 @@
 {
-  "checked": "23 Oct 2026",
+  "checked": "18 Nov 2026",
   "groups": [
     {
       "id": "active-placeholder",
       "title": "Active codes — none verified",
-      "intro": "This row is a scaffold placeholder dated 23 Oct 2026. It is not a Blood Strike redeem code. Tracker sites and top-up pages publish strings that change without notice. Nothing in the Steam store text or the 20 Oct 2026 official update post was a paste-in code. Do not type the dash into the game.",
+      "intro": "This row is a placeholder dated 18 Nov 2026. It is not a Blood Strike redeem code. The official update list (74 posts) and the official-news list (14 posts) were read for a paste-in coupon. The newest update is 10 Nov 2026. It prints login gifts, missions, and a Strike Pass. It does not print a code. Tracker lists were not copied. Do not type the dash into the game.",
       "rows": [
         {
           "code": "—",
           "reward": "Unknown",
           "status": "placeholder",
           "statusLabel": "Placeholder",
-          "note": "23 Oct 2026. No active code was confirmed in a client for this build. Replace this row only after you redeem a string successfully, and write down the reward the client actually gave."
+          "note": "18 Nov 2026. No active code was confirmed. Nothing on blood-strike.com’s news lists, and nothing in the Steam news feed for AppID 3199170 through the 10 Nov 2026 announcement, was a coupon string. This site did not redeem a code."
         }
       ]
     },
     {
       "id": "expired-placeholder",
       "title": "Expired codes — none filed",
-      "intro": "Filing a dead string this site has not seen would invent a code. Expired rows stay empty until a code was real on an earlier check and then failed.",
+      "intro": "A dead row needs a string this site had already verified. That has not happened, so there is still nothing to mark expired. Strings that only appear on tracker pages were not added here as either active or expired.",
       "rows": [
         {
           "code": "—",
           "reward": "—",
           "status": "placeholder",
           "statusLabel": "Placeholder",
-          "note": "23 Oct 2026. No expired code is listed, because none was verified here first. In-game event gifts from the 20 Oct 2026 post (login Gold, draws, a rally skin) are not codes."
+          "note": "18 Nov 2026. No expired code is listed. The 20 Oct 2026 login-Gold window (30 Oct–1 Nov) and the gifts in the 10 Nov 2026 post are in-game events, not codes. The March 2025 anniversary notes mention invitation codes and a 7-digit team code. Those are not reward coupons, and no coupon string was printed beside them."
         }
       ]
     }
