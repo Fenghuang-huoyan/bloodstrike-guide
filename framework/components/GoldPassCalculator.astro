@@ -1,0 +1,163 @@
+---
+/**
+ * Interactive Strike Pass 520 Gold Refund & Season Budget Calculator.
+ * Uses only the verified 520 Gold max-level Strike Pass refund figure from the 10 Nov 2026 official update.
+ */
+---
+<section class="gold-calc" aria-label="Strike Pass Gold Refund Calculator">
+  <div class="calc-head">
+    <span class="calc-tag">Interactive Tool</span>
+    <h3>Strike Pass 520 Gold Refund Planner</h3>
+    <p>
+      The official 10 Nov 2026 update confirms the <strong>Graffiti Artist Strike Pass</strong> refunds up to <strong>520 Gold</strong> at max level. Check how many seasons a single Gold top-up covers if you finish each pass:
+    </p>
+  </div>
+
+  <div class="calc-grid">
+    <label class="calc-field">
+      <span>Starting Gold Balance</span>
+      <input id="bs-starting-gold" type="number" min="0" max="50000" step="10" value="520" />
+    </label>
+    <label class="calc-field">
+      <span>Planned Seasons Completed</span>
+      <select id="bs-seasons">
+        <option value="1">1 Season</option>
+        <option value="2">2 Seasons</option>
+        <option value="3" selected>3 Seasons</option>
+        <option value="5">5 Seasons</option>
+      </select>
+    </label>
+    <label class="calc-field">
+      <span>Extra Shop Spend / Season (Gold)</span>
+      <input id="bs-extra-spend" type="number" min="0" max="10000" step="10" value="0" />
+    </label>
+  </div>
+
+  <div class="calc-result" id="bs-calc-result" role="status" aria-live="polite">
+    <div class="res-stat">
+      <span class="res-label">Pass Unlock Status</span>
+      <strong id="bs-unlock-status">Ready (520+ Gold)</strong>
+    </div>
+    <div class="res-stat">
+      <span class="res-label">Total Gold Refunded</span>
+      <strong id="bs-total-refund">1,560 Gold</strong>
+    </div>
+    <div class="res-stat">
+      <span class="res-label">Additional Gold Needed</span>
+      <strong id="bs-gold-needed">0 Gold</strong>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  (function () {
+    const PASS_REFUND = 520;
+    const startInput = document.getElementById('bs-starting-gold');
+    const seasonsSelect = document.getElementById('bs-seasons');
+    const extraInput = document.getElementById('bs-extra-spend');
+    const statusEl = document.getElementById('bs-unlock-status');
+    const refundEl = document.getElementById('bs-total-refund');
+    const neededEl = document.getElementById('bs-gold-needed');
+
+    function update() {
+      if (!startInput || !seasonsSelect || !extraInput) return;
+      const start = Math.max(0, parseInt(startInput.value || '0', 10) || 0);
+      const seasons = Math.max(1, parseInt(seasonsSelect.value || '1', 10) || 1);
+      const extra = Math.max(0, parseInt(extraInput.value || '0', 10) || 0);
+
+      // Assuming Elite Pass entry matches the 520 Gold self-sustaining refund loop when maxed:
+      const firstPassShortfall = Math.max(0, PASS_REFUND - start);
+      const totalExtra = extra * seasons;
+      const leftoverAfterFirst = Math.max(0, start - PASS_REFUND);
+      const netNeeded = firstPassShortfall + Math.max(0, totalExtra - leftoverAfterFirst);
+      const totalRefunded = PASS_REFUND * seasons;
+
+      statusEl.textContent = start >= PASS_REFUND ? 'Self-Sustaining (520+ Gold)' : ('Short by ' + firstPassShortfall + ' Gold');
+      refundEl.textContent = totalRefunded.toLocaleString('en-US') + ' Gold';
+      neededEl.textContent = netNeeded.toLocaleString('en-US') + ' Gold';
+    }
+
+    [startInput, seasonsSelect, extraInput].forEach((el) => {
+      if (el) el.addEventListener('input', update);
+      if (el) el.addEventListener('change', update);
+    });
+    update();
+  })();
+</script>
+
+<style>
+  .gold-calc {
+    margin: 1.25rem 0;
+    padding: 1rem 1.1rem;
+    border: 1px solid rgba(128, 128, 128, 0.35);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.03);
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  .calc-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    background: rgba(217, 72, 38, 0.16);
+    color: #d94826;
+    margin-bottom: 0.3rem;
+  }
+  .calc-head h3 {
+    margin: 0 0 0.35rem;
+    font-size: 1.05rem;
+  }
+  .calc-head p {
+    margin: 0 0 0.85rem;
+    font-size: 0.86rem;
+    line-height: 1.45;
+  }
+  .calc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 0.65rem;
+    margin-bottom: 0.85rem;
+  }
+  .calc-field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    min-width: 0;
+  }
+  .calc-field input,
+  .calc-field select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.45rem 0.55rem;
+    border-radius: 5px;
+    border: 1px solid rgba(128, 128, 128, 0.45);
+    background: inherit;
+    color: inherit;
+    font-size: 0.9rem;
+  }
+  .calc-result {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+    gap: 0.6rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid rgba(128, 128, 128, 0.25);
+  }
+  .res-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+  .res-label {
+    font-size: 0.74rem;
+    opacity: 0.78;
+  }
+  .res-stat strong {
+    font-size: 0.96rem;
+  }
+</style>
