@@ -1,0 +1,124 @@
+---
+import { monetizationConfig } from '@site/monetization.config';
+
+const affUrl = monetizationConfig.lootbarAffiliateUrl.trim();
+const isAffiliate = affUrl.length > 0;
+const primaryHref = isAffiliate ? affUrl : monetizationConfig.officialSiteUrl;
+---
+<section class="topup-card" aria-label="Blood Strike Gold & Strike Pass Options">
+  <div class="topup-header">
+    <div>
+      <span class="topup-eyebrow">{isAffiliate ? 'Verified UID Top-Up Partner' : 'Official Strike Pass & Gold Reference'}</span>
+      <h3>Need Gold for the Strike Pass? (520 Gold Full Refund Loop)</h3>
+    </div>
+    {isAffiliate && <span class="topup-badge">{monetizationConfig.lootbarDiscountBadge}</span>}
+  </div>
+
+  <p class="topup-desc">
+    Since official announcements currently reward players via in-game events and the <strong>Strike Pass (520 Gold refunded at max tier)</strong> rather than paste-in coupons, never trust sketchy “free Gold generator” sites asking for your password. Legitimate top-ups only ever require your numeric <strong>User ID (UID)</strong>.
+  </p>
+
+  <div class="topup-actions">
+    {isAffiliate ? (
+      <a class="topup-btn primary" href={primaryHref} target="_blank" rel="sponsored noopener noreferrer">
+        Check Discounted Blood Strike Gold on LootBar →
+      </a>
+    ) : (
+      <a class="topup-btn primary" href={primaryHref} target="_blank" rel="noopener noreferrer">
+        Official Blood Strike Website →
+      </a>
+    )}
+    <a class="topup-btn secondary" href={monetizationConfig.steamStoreUrl} target="_blank" rel="noopener noreferrer">
+      Free on Steam
+    </a>
+  </div>
+
+  {isAffiliate && <p class="topup-disclosure">{monetizationConfig.disclosure}</p>}
+</section>
+
+<style>
+  .topup-card {
+    margin: 1.25rem 0;
+    padding: 1rem 1.15rem;
+    background: linear-gradient(145deg, #1d1918 0%, #271d1a 100%);
+    color: #f7f1ea;
+    border: 2px solid #c94a29;
+    border-radius: 8px;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  .topup-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.55rem;
+  }
+  .topup-eyebrow {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #ff9d76;
+    margin-bottom: 0.15rem;
+  }
+  .topup-header h3 {
+    margin: 0;
+    font-size: 1.05rem;
+    line-height: 1.3;
+    color: #ffffff;
+  }
+  .topup-badge {
+    display: inline-block;
+    padding: 0.22rem 0.55rem;
+    background: #f5b942;
+    color: #1c1306;
+    font-size: 0.75rem;
+    font-weight: 800;
+    border-radius: 4px;
+    white-space: nowrap;
+  }
+  .topup-desc {
+    margin: 0 0 0.85rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: #e3d8cd;
+  }
+  .topup-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  .topup-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 0.9rem;
+    border-radius: 5px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  .topup-btn.primary {
+    background: #d94826;
+    color: #ffffff !important;
+  }
+  .topup-btn.primary:hover {
+    background: #b93819;
+  }
+  .topup-btn.secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: #f7f1ea !important;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+  }
+  .topup-disclosure {
+    margin: 0.65rem 0 0;
+    font-size: 0.73rem;
+    line-height: 1.4;
+    color: #b8aa9d;
+  }
+</style>
