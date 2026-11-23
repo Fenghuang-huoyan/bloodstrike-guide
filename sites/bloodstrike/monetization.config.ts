@@ -6,8 +6,8 @@
  * linking to the official NetEase Blood Strike page without any broken or fake partner URLs.
  */
 export const monetizationConfig = {
-  /** Paste your LootBar Blood Strike affiliate link here once registered (e.g. https://lootbar.gg/top-up/blood-strike?aff=YOUR_ID) */
-  lootbarAffiliateUrl: '',
+  /** Official LootBar Blood Strike custom affiliate link (Account U1063120245, channel: dropcodex) */
+  lootbarAffiliateUrl: 'https://www.lootbar.com/top-up/blood-strike?aff_short=dropcodex',
   lootbarDiscountBadge: 'Up to 15% Off Gold via UID',
   officialSiteUrl: 'https://www.blood-strike.com/',
   steamStoreUrl: 'https://store.steampowered.com/app/3199170/Blood_Strike/',
