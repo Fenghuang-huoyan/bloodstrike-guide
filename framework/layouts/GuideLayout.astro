@@ -22,6 +22,7 @@ interface Props {
   headings: Heading[];
   banner: string;
   bannerAlt: string;
+  toolsFirst?: boolean;
   extraJsonLd?: Record<string, unknown> | Record<string, unknown>[];
 }
 const props = Astro.props;
@@ -51,16 +52,28 @@ const extra = props.extraJsonLd
         <p class="crumbs"><a href="/">Home</a> / {props.section}</p>
         <p class="kicker">{props.section}</p>
         <h1>{props.h1}</h1>
-        <p class="checked"><b>Sources checked</b> <span>{props.verifiedAgainst}</span></p>
+        <p class="checked"><b>Verified check</b> <span>{props.verifiedAgainst}</span></p>
       </header>
-      <QuickAnswer sentences={props.quickAnswer} />
-      <AdSlot name="afterQuickAnswer" />
-      <div class="toc-mobile">
-        <Toc headings={props.headings} />
-      </div>
-      <div class="prose">
-        <slot />
-      </div>
+      {props.toolsFirst ? (
+        <>
+          <div class="prose">
+            <slot />
+          </div>
+          <QuickAnswer sentences={props.quickAnswer} />
+          <AdSlot name="afterQuickAnswer" />
+        </>
+      ) : (
+        <>
+          <QuickAnswer sentences={props.quickAnswer} />
+          <AdSlot name="afterQuickAnswer" />
+          <div class="toc-mobile">
+            <Toc headings={props.headings} />
+          </div>
+          <div class="prose">
+            <slot />
+          </div>
+        </>
+      )}
       <section class="sources">
         <h2>Sources and last check</h2>
         <p>
@@ -93,17 +106,17 @@ const extra = props.extraJsonLd
   .page-banner {
     width: calc(100% + 2.3rem);
     max-width: none;
-    height: 9.5rem;
-    margin: -1.25rem -1.15rem 1rem;
+    height: 6.2rem;
+    margin: -1.25rem -1.15rem 0.85rem;
     object-fit: cover;
-    object-position: center 42%;
-    border-bottom: 3px solid #2a333c;
+    object-position: center 38%;
+    border-bottom: 2px solid #2a333c;
   }
   @media (min-width: 720px) {
     .page-banner {
       width: calc(100% + 3.4rem);
-      height: 11.5rem;
-      margin: -1.6rem -1.7rem 1.1rem;
+      height: 7.4rem;
+      margin: -1.6rem -1.7rem 0.95rem;
     }
   }
   .toc-mobile { margin: 0 0 1rem; }

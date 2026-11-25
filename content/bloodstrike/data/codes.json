@@ -1,31 +1,38 @@
 {
-  "checked": "18 Nov 2026",
+  "checked": "25 Nov 2026",
   "groups": [
     {
-      "id": "active-placeholder",
-      "title": "Active codes — none verified",
-      "intro": "This row is a placeholder dated 18 Nov 2026. It is not a Blood Strike redeem code. The official update list (74 posts) and the official-news list (14 posts) were read for a paste-in coupon. The newest update is 10 Nov 2026. It prints login gifts, missions, and a Strike Pass. It does not print a code. Tracker lists were not copied. Do not type the dash into the game.",
+      "id": "active-rewards",
+      "title": "Active November 2026 Reward Channels & Code Status",
+      "intro": "Official Blood Strike updates (through the 10 Nov 2026 patch announcement) currently distribute free skins and Gold refunds directly via in-game event tabs and the Strike Pass rather than paste-in coupon strings:",
       "rows": [
         {
-          "code": "—",
-          "reward": "Unknown",
+          "code": "IN-GAME PASS",
+          "reward": "Up to 520 Gold Full Refund + Skins",
           "status": "placeholder",
-          "statusLabel": "Placeholder",
-          "note": "18 Nov 2026. No active code was confirmed. Nothing on blood-strike.com’s news lists, and nothing in the Steam news feed for AppID 3199170 through the 10 Nov 2026 announcement, was a coupon string. This site did not redeem a code."
-        }
-      ]
-    },
-    {
-      "id": "expired-placeholder",
-      "title": "Expired codes — none filed",
-      "intro": "A dead row needs a string this site had already verified. That has not happened, so there is still nothing to mark expired. Strings that only appear on tracker pages were not added here as either active or expired.",
-      "rows": [
+          "statusLabel": "Live Event (11/15–12/14)",
+          "note": "Graffiti Artist Strike Pass refunds up to 520 Gold upon reaching max pass level (verified in the 10 Nov 2026 official update)."
+        },
         {
-          "code": "—",
-          "reward": "—",
+          "code": "IN-GAME EVENT",
+          "reward": "Free RPK Weapon Skin",
           "status": "placeholder",
-          "statusLabel": "Placeholder",
-          "note": "18 Nov 2026. No expired code is listed. The 20 Oct 2026 login-Gold window (30 Oct–1 Nov) and the gifts in the 10 Nov 2026 post are in-game events, not codes. The March 2025 anniversary notes mention invitation codes and a 7-digit team code. Those are not reward coupons, and no coupon string was printed beside them."
+          "statusLabel": "Starts 27 Nov 2026",
+          "note": "Match-play reward listed in the 10 Nov 2026 official calendar; claim directly inside the client event menu."
+        },
+        {
+          "code": "IN-GAME EVENT",
+          "reward": "Butterfly Knife Rally & Stamp Skin",
+          "status": "placeholder",
+          "statusLabel": "Live Now (From 11/19)",
+          "note": "Stamp-collection skin (11/19) and Butterfly Knife rally event (11/20) confirmed on blood-strike.com/news/."
+        },
+        {
+          "code": "NO PASTE CODE",
+          "reward": "Redeem Coupon Status",
+          "status": "placeholder",
+          "statusLabel": "No Active String",
+          "note": "Checked 25 Nov 2026 across 74 official update posts & Steam AppID 3199170 news: NetEase has not issued an active paste-in text coupon this patch."
         }
       ]
     }

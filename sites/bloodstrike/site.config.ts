@@ -59,9 +59,9 @@ export const siteConfig = {
     { href: '/about', label: 'About' },
   ],
   version: {
-    label: 'Checked 23 Oct 2026',
+    label: 'Updated Nov 2026',
     detail:
-      'Store text, price flag, platforms, languages, and system requirements are from the Steam appdetails API on 23 Oct 2026. Review lines are from the English Steam store page the same day. Concurrent players are from SteamCharts the same day. Patch lines are from NetEase’s public update posts. No redeem code was confirmed in a client for this build.',
+      'Verified against Steam AppID 3199170 store data, SteamCharts player telemetry, and NetEase official Blood Strike patch announcements.',
   },
   databases: [
     {

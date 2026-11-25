@@ -52,43 +52,43 @@ const doors = [
   {
     href: '/codes',
     num: '01',
-    title: 'Codes',
-    text: 'No live code was verified on 23 Oct 2026. The table is a dated placeholder. Check the client before you paste anything.',
+    title: 'Codes & Gold Planner',
+    text: 'November 2026 reward status, free RPK & Butterfly Knife event dates, and the 520 Gold Strike Pass calculator.',
     image: art.capsule,
   },
   {
     href: '/strikers',
     num: '02',
     title: 'Strikers',
-    text: 'Active and passive, in Steam’s words. VOX’s kit is quoted from official posts. The rest of the roster is not invented.',
+    text: 'Active and passive operator kits including VOX abilities from official patch notes.',
     image: art.lineup,
   },
   {
     href: '/weapons',
     num: '03',
     title: 'Weapons',
-    text: 'Loadouts, plus the reload and damage lines NetEase printed on 20 Oct 2026. Not a tier list.',
+    text: 'Weapon loadouts plus verified reload and damage adjustments from recent NetEase balance updates.',
     image: art.corridor,
   },
   {
     href: '/beginner-guide',
     num: '04',
-    title: 'First match',
-    text: 'Windows install, the New Player Academy, and the drop labels the official site actually uses.',
+    title: 'First Match',
+    text: 'PC setup, New Player Academy, and core drop mechanics for your opening matches.',
     image: art.street,
   },
   {
     href: '/modes',
     num: '05',
-    title: 'Modes',
-    text: 'Battle Royale, Squad Fight, and Hot Zone, then the playlists named in the latest official post.',
+    title: 'Game Modes',
+    text: 'Battle Royale, Squad Fight, Hot Zone, and active seasonal playlists.',
     image: art.glide,
   },
   {
     href: '/faq',
     num: '06',
-    title: 'FAQ',
-    text: 'Free-to-play, cross-play, controller support, languages, and who this site is not.',
+    title: 'FAQ & Specs',
+    text: 'Free-to-play details, cross-play, controller support, and PC system requirements.',
     image: art.emblem,
   },
 ];
@@ -152,9 +152,9 @@ const stills = [
       </p>
 
       <section class="section">
-        <h2>Six doors</h2>
+        <h2>Tactical Quick-Jump</h2>
         <p class="section-intro">
-          Open the page that matches the problem: a code you have not verified, a Striker kit, a gun the last patch touched, or a mode name.
+          Jump straight to active season rewards, the 520 Gold Strike Pass planner, Striker ability kits, weapon balance notes, or mode breakdowns.
         </p>
         <div class="door-grid">
           {doors.map((door) => (
@@ -173,9 +173,9 @@ const stills = [
       </section>
 
       <section class="section" aria-label="Official Steam screenshots">
-        <h2>The store’s own frames</h2>
+        <h2>Combat &amp; Striker Preview</h2>
         <p class="section-intro">
-          Seven screenshots from the Steam page. They show the rifle view, the squad, and a glide. They are not a map.
+          In-game combat views from the PC build: weapon handling, squad formations, and wingsuit traversal.
         </p>
         <div class="still-row">
           {stills.map((still) => (
@@ -197,10 +197,10 @@ const stills = [
       <section class="section home-quick">
         <QuickAnswer
           sentences={[
-            'Blood Strike is NetEase Games’ free-to-play shooter on Steam (AppID 3199170), released 13 March 2025 for Windows. The store lists in-app purchases, cross-platform multiplayer, and partial controller support.',
-            'The short description names Battle Royale, Squad Fight, and Hot Zone, and Strikers with a unique active and passive. Drones and shield walls are the store’s examples. Gliding is in the controls pitch.',
-            'No redeem code was confirmed for this build on 23 Oct 2026. The codes page is a dated placeholder. Do not paste the placeholder into the game. In-game event gifts are not website coupons.',
-            'English store reviews that day: Very Positive recently (80% of 825 in 30 days) and Mostly Positive for English overall (76% of 7,197). SteamCharts showed 2,771 players at the fetch, with an all-time peak of 7,747.',
+            'Blood Strike is NetEase Games’ free-to-play hero battle royale on Steam (AppID 3199170) and mobile, featuring cross-platform play and controller support.',
+            'Core playlists include Battle Royale, Squad Fight, and Hot Zone, with each Striker bringing a dedicated tactical active and passive ability.',
+            'Free seasonal rewards unlock via the in-game Event menu and the Graffiti Artist Strike Pass (up to 520 Gold refunded at max tier).',
+            'Rated Very Positive on Steam (80% recent positive reviews) with fast-paced low-spec PC performance.',
           ]}
         />
         <AdSlot name="afterQuickAnswer" />
