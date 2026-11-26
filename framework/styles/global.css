@@ -217,21 +217,27 @@ button, input, select { font: inherit; color: inherit; }
 .town-hero {
   position: relative;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 100%;
   margin: 0.35rem 0 0;
   border-radius: 16px;
-  overflow: hidden;
+  overflow: clip;
   background: #07090b;
   border: 2px solid var(--line);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
 }
 .hero-art {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   height: auto;
   aspect-ratio: 1920 / 620;
   object-fit: cover;
   object-position: center center;
 }
 .hero-panel {
+  min-width: 0;
+  max-width: 100%;
   padding: 1.15rem 1.15rem 1.25rem;
   color: var(--ink);
   background: #0b0e10;
@@ -333,7 +339,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; letter-spacing: 0.01em
 .card-art { position: relative; display: block; background: #07090b; }
 .card-art img {
   width: 100%;
-  height: 11.5rem;
+  height: auto;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 .door .num, .section-tag {
@@ -420,13 +427,15 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; letter-spacing: 0.01em
   }
 }
 .guide {
+  min-width: 0;
+  max-width: 100%;
   background: var(--surface);
   color: var(--ink-on-paper);
   border-radius: 22px;
   padding: 1.25rem 1.15rem 1.4rem;
   border: 2px solid var(--line);
   box-shadow: 8px 8px 0 rgba(196, 30, 58, 0.28);
-  overflow: hidden;
+  overflow: clip;
 }
 @media (min-width: 720px) {
   .guide { padding: 1.6rem 1.7rem 1.8rem; }
@@ -640,7 +649,8 @@ h1, h2, h3 { font-family: var(--serif); font-weight: 700; letter-spacing: 0.01em
 .still-row figure { margin: 0; }
 .still-row img {
   width: 100%;
-  height: 8.4rem;
+  height: auto;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 14px;
   border: 2px solid var(--line);

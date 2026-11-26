@@ -40,19 +40,23 @@ const extra = props.extraJsonLd
 <BaseLayout title={props.title} description={props.description} jsonLd={[article, ...extra]}>
   <main id="content" class="shell layout">
     <article class="guide">
-      <img
-        class="page-banner"
-        src={props.banner}
-        alt={props.bannerAlt}
-        width="600"
-        height="338"
-        decoding="async"
-      />
       <header class="page-head">
-        <p class="crumbs"><a href="/">Home</a> / {props.section}</p>
-        <p class="kicker">{props.section}</p>
-        <h1>{props.h1}</h1>
-        <p class="checked"><b>Verified check</b> <span>{props.verifiedAgainst}</span></p>
+        <div class="head-copy">
+          <p class="crumbs"><a href="/">Home</a> / {props.section}</p>
+          <p class="kicker">{props.section}</p>
+          <h1>{props.h1}</h1>
+          <p class="checked"><b>Verified check</b> <span>{props.verifiedAgainst}</span></p>
+        </div>
+        <div class="banner-wrap">
+          <img
+            class="page-banner"
+            src={props.banner}
+            alt={props.bannerAlt}
+            width="600"
+            height="338"
+            decoding="async"
+          />
+        </div>
       </header>
       {props.toolsFirst ? (
         <>
@@ -103,20 +107,41 @@ const extra = props.extraJsonLd
 </BaseLayout>
 
 <style>
-  .page-banner {
-    width: calc(100% + 2.3rem);
-    max-width: none;
-    height: 6.2rem;
-    margin: -1.25rem -1.15rem 0.85rem;
-    object-fit: cover;
-    object-position: center 38%;
-    border-bottom: 2px solid #2a333c;
+  .page-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.9rem;
+    align-items: center;
+    padding-bottom: 0.9rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #2a333c;
   }
-  @media (min-width: 720px) {
-    .page-banner {
-      width: calc(100% + 3.4rem);
-      height: 7.4rem;
-      margin: -1.6rem -1.7rem 0.95rem;
+  .head-copy {
+    min-width: 0;
+  }
+  .head-copy .checked {
+    margin-bottom: 0;
+  }
+  .banner-wrap {
+    order: -1;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #2a333c;
+    background: #0b0e10;
+  }
+  .page-banner {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  @media (min-width: 760px) {
+    .page-head {
+      grid-template-columns: minmax(0, 1fr) 290px;
+      gap: 1.25rem;
+    }
+    .banner-wrap {
+      order: 0;
     }
   }
   .toc-mobile { margin: 0 0 1rem; }
