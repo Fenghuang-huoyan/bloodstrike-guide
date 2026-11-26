@@ -1,0 +1,81 @@
+---
+title: "Blood Strike Gold Top-Up Guide — UID Delivery, Safety & 520 Gold Calculator (Nov 2026)"
+description: "How Blood Strike UID Gold top-ups work, third-party vs. in-game store differences, account safety rules, and the 520 Gold Strike Pass budget calculator."
+h1: "Blood Strike Gold Top-Up & UID Safety Guide"
+section: "Gold & Top-Up"
+order: 2
+toolsFirst: true
+verifiedAgainst: "Official Blood Strike site (blood-strike.com), Steam AppID 3199170 store page, and 10 Nov 2026 Graffiti Artist Strike Pass update."
+quickAnswer:
+  - "Legitimate Blood Strike Gold top-ups only require your numeric in-game User ID (UID)—never share your NetEase, Google, Facebook, or Steam password."
+  - "Unlocking and maxing out the Graffiti Artist Strike Pass (11/15–12/14) refunds up to 520 Gold, allowing active players to chain future passes from one initial Gold purchase."
+  - "Using verified UID recharge channels such as LootBar typically saves up to ~15% compared to standard mobile app-store regional pricing, with direct in-game mail/balance delivery."
+  - "If a top-up is delayed or fails, 90%+ of cases come from mistyping a digit in your UID or picking the wrong server region before checkout."
+sources:
+  - label: "Official Blood Strike Website"
+    url: "https://www.blood-strike.com/"
+  - label: "Official Update — Graffiti Artist Strike Pass (520 Gold Refund)"
+    url: "https://www.blood-strike.com/news/update/20261109/39377_1319149.html"
+  - label: "Steam Store — Blood Strike (AppID 3199170)"
+    url: "https://store.steampowered.com/app/3199170/Blood_Strike/"
+related:
+  - href: "/codes"
+    label: "Codes & Free Skin Events"
+  - href: "/strikers"
+    label: "Strikers Roster"
+  - href: "/weapons"
+    label: "Weapons & Patch Notes"
+banner: "/images/official/steam/header.jpg"
+bannerAlt: "Official Steam header artwork for Blood Strike"
+---
+
+import Callout from '@framework/components/Callout.astro';
+import GoldTopUpWidget from '@framework/components/GoldTopUpWidget.astro';
+import GoldPassCalculator from '@framework/components/GoldPassCalculator.astro';
+import { monetizationConfig } from '@site/monetization.config';
+
+<GoldTopUpWidget />
+
+<GoldPassCalculator />
+
+## Why UID-Only Top-Ups Matter (And What to Avoid)
+
+When buying **Blood Strike Gold** outside the mobile app stores, every recharge method falls into one of two categories:
+
+1. **UID Direct Top-Up (Recommended)**: You copy your numeric **User ID (UID)** from your in-game profile card and complete checkout without ever logging into your game account on an external page. Partner platforms like <a href={monetizationConfig.lootbarAffiliateUrl || monetizationConfig.officialSiteUrl} target="_blank" rel={monetizationConfig.lootbarAffiliateUrl ? "sponsored noopener noreferrer" : "noopener noreferrer"}>LootBar Blood Strike Top-Up</a> deliver Gold straight to your UID, typically offering up to ~15% lower regional bundle rates than mobile store checkout fees.
+2. **Account-Login Top-Up (High Risk — Avoid)**: Any seller or Discord DM asking for your email, password, or verification code to "log in and buy Gold cheaper" puts your account at risk of credential theft or chargeback penalties.
+
+<Callout kind="warn" title="Account Safety & Chargeback Reality Check">
+No third-party guide can guarantee "100% zero risk" under every scenario. In Blood Strike and other NetEase titles, negative Gold balances or suspensions happen when a fraudulent seller uses stolen cards and triggers a bank **chargeback** after delivery. Stick strictly to established UID-only checkout platforms with buyer receipts, or purchase directly inside the official PC/Steam or mobile client.
+</Callout>
+
+## Official Store vs. Third-Party UID Top-Up Comparison
+
+<div class="table-scroll">
+
+| Factor | In-Game Store (Steam / iOS / Google Play) | Verified UID Top-Up (<a href={monetizationConfig.lootbarAffiliateUrl || monetizationConfig.officialSiteUrl} target="_blank" rel={monetizationConfig.lootbarAffiliateUrl ? "sponsored noopener noreferrer" : "noopener noreferrer"}>LootBar</a>) | Sketchy Login Sellers / "Free Gold" Sites |
+| --- | --- | --- | --- |
+| **Credentials Needed** | Logged-in game client | **Numeric UID only** (no password) | Asks for account login or survey tasks |
+| **Typical Cost** | Standard retail + app store tax | Often **~10%–15% lower** on Gold packs | Scam / credential harvesting |
+| **Delivery Speed** | Instant | Usually **1–10 minutes** (peak patch days may take longer) | Never arrives or risks chargeback |
+| **Best Use Case** | Small single purchases using Steam Wallet | **520+ Gold Strike Pass** seed or seasonal skin bundles | Never use |
+
+</div>
+
+## How to Find Your Exact Blood Strike UID
+
+Before placing any Gold order, double-check your UID inside the client so your purchase does not land on someone else's profile:
+
+1. Launch **Blood Strike** on PC (Steam) or mobile and tap your **Avatar / Profile** in the top-left corner of the lobby.
+2. Locate the numeric **UID** printed right beneath your player name and use the **Copy** icon rather than typing digits by hand.
+3. Confirm your **Server Region** (e.g., Global, Americas, SEA, MENA) matches any region selector on the checkout page.
+
+## Payment Methods, Delivery Window & Common Failure Fixes
+
+- **Supported Regional Payments**: Depending on your country, UID checkout hubs support international cards (Visa/Mastercard), PayPal, Apple/Google Pay, and local e-wallets where App Store cards are unavailable.
+- **Expected Delivery Time**: Most UID Gold orders credit within **1 to 10 minutes**. If Gold does not appear immediately in the top-right counter, restart the game lobby or check your in-game **Mail** tab.
+- **What if You Typed the Wrong UID?**: Once Gold is dispatched to an existing valid UID on NetEase's server, neither the platform nor NetEase can reverse and transfer those coins to another player. If the mistyped UID does **not** exist, the order typically fails automatically and can be refunded by customer support—contact the checkout platform's live chat immediately with your order number before delivery completes.
+
+<p style="font-size:0.8rem;opacity:0.78;margin-top:1.25rem;">
+  <strong>Affiliate &amp; Independence Disclosure:</strong> {monetizationConfig.disclosure} This fan guide is independent and is not affiliated with, endorsed by, or officially partnered with NetEase Games.
+</p>
