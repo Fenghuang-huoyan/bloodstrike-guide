@@ -7,29 +7,54 @@ const primaryHref = isAffiliate ? affUrl : monetizationConfig.officialSiteUrl;
 ---
 <section class="topup-card" aria-label="Blood Strike Gold & Strike Pass Options">
   <div class="topup-header">
-    <div>
-      <span class="topup-eyebrow">{isAffiliate ? 'Verified UID Top-Up Partner' : 'Official Strike Pass & Gold Reference'}</span>
+    <div class="topup-title-group">
+      <span class="topup-eyebrow">
+        <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+        {isAffiliate ? 'Verified UID Top-Up Partner' : 'Official Strike Pass & Gold Reference'}
+      </span>
       <h3>Need Gold for the Strike Pass? (520 Gold Full Refund Loop)</h3>
     </div>
-    {isAffiliate && <span class="topup-badge">{monetizationConfig.lootbarDiscountBadge}</span>}
+    {isAffiliate && (
+      <span class="topup-badge">
+        <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        {monetizationConfig.lootbarDiscountBadge}
+      </span>
+    )}
   </div>
 
   <p class="topup-desc">
-    Since official announcements currently reward players via in-game events and the <strong>Strike Pass (520 Gold refunded at max tier)</strong> rather than paste-in coupons, never trust sketchy “free Gold generator” sites asking for your password. Legitimate top-ups only ever require your numeric <strong>User ID (UID)</strong>.
+    Official November events reward skins directly in-game while the <strong>Strike Pass refunds up to 520 Gold at max tier</strong>. Never enter your login on “free Gold generator” sites—legitimate top-ups only ever require your numeric <strong>User ID (UID)</strong>.
   </p>
+
+  <ul class="topup-trust" aria-label="Safety highlights">
+    <li>
+      <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      Numeric UID Only (Zero Password)
+    </li>
+    <li>
+      <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      520 Gold Self-Sustaining Pass
+    </li>
+    <li>
+      <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      Direct Global &amp; SEA Regions
+    </li>
+  </ul>
 
   <div class="topup-actions">
     {isAffiliate ? (
       <a class="topup-btn primary" href={primaryHref} target="_blank" rel="sponsored noopener noreferrer">
-        Check Discounted Blood Strike Gold on LootBar →
+        <span>Check Discounted Blood Strike Gold on LootBar</span>
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
       </a>
     ) : (
       <a class="topup-btn primary" href={primaryHref} target="_blank" rel="noopener noreferrer">
-        Official Blood Strike Website →
+        <span>Official Blood Strike Website</span>
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
       </a>
     )}
     <a class="topup-btn secondary" href={monetizationConfig.steamStoreUrl} target="_blank" rel="noopener noreferrer">
-      Free on Steam
+      <span>Play Free on Steam</span>
     </a>
   </div>
 
@@ -38,12 +63,16 @@ const primaryHref = isAffiliate ? affUrl : monetizationConfig.officialSiteUrl;
 
 <style>
   .topup-card {
-    margin: 1.25rem 0;
-    padding: 1rem 1.15rem;
-    background: linear-gradient(145deg, #1d1918 0%, #271d1a 100%);
-    color: #f7f1ea;
-    border: 2px solid #c94a29;
-    border-radius: 8px;
+    margin: 1rem 0 1.25rem;
+    padding: 1.15rem 1.25rem;
+    background:
+      radial-gradient(120% 100% at 100% 0%, rgba(225, 29, 72, 0.16) 0%, transparent 58%),
+      linear-gradient(180deg, #161c26 0%, #10151d 100%);
+    color: #f8fafc;
+    border: 1px solid rgba(244, 63, 94, 0.42);
+    border-left: 4px solid #e11d48;
+    border-radius: 12px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.06);
     box-sizing: border-box;
     max-width: 100%;
   }
@@ -52,73 +81,120 @@ const primaryHref = isAffiliate ? affUrl : monetizationConfig.officialSiteUrl;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 0.5rem;
-    margin-bottom: 0.55rem;
+    gap: 0.65rem;
+    margin-bottom: 0.6rem;
+  }
+  .topup-title-group {
+    min-width: 0;
+    flex: 1 1 16rem;
   }
   .topup-eyebrow {
-    display: block;
-    font-size: 0.72rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.74rem;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: #ff9d76;
-    margin-bottom: 0.15rem;
+    letter-spacing: 0.07em;
+    color: #fda4af;
+    margin-bottom: 0.25rem;
   }
   .topup-header h3 {
     margin: 0;
-    font-size: 1.05rem;
-    line-height: 1.3;
+    font-size: 1.14rem;
+    line-height: 1.28;
     color: #ffffff;
   }
   .topup-badge {
-    display: inline-block;
-    padding: 0.22rem 0.55rem;
-    background: #f5b942;
-    color: #1c1306;
-    font-size: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.28rem;
+    padding: 0.28rem 0.65rem;
+    background: #fbbf24;
+    color: #0f172a;
+    font-size: 0.76rem;
     font-weight: 800;
-    border-radius: 4px;
+    border-radius: 999px;
     white-space: nowrap;
+    box-shadow: 0 2px 10px rgba(251, 191, 36, 0.25);
   }
   .topup-desc {
-    margin: 0 0 0.85rem;
-    font-size: 0.88rem;
-    line-height: 1.5;
-    color: #e3d8cd;
+    margin: 0 0 0.75rem;
+    font-size: 0.9rem;
+    line-height: 1.52;
+    color: #cbd5e1;
+  }
+  .topup-desc strong {
+    color: #f8fafc;
+  }
+  .topup-trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45rem 1rem;
+    list-style: none;
+    padding: 0.55rem 0.75rem;
+    margin: 0 0 0.95rem;
+    border-radius: 8px;
+    background: rgba(9, 12, 16, 0.55);
+    border: 1px solid rgba(148, 163, 184, 0.14);
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #e2e8f0;
+  }
+  .topup-trust li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    color: #e2e8f0;
+  }
+  .topup-trust svg {
+    color: #34d399;
+    flex-shrink: 0;
   }
   .topup-actions {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem;
+    gap: 0.65rem;
   }
   .topup-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.5rem 0.9rem;
-    border-radius: 5px;
-    font-size: 0.84rem;
+    gap: 0.42rem;
+    min-height: 2.75rem;
+    padding: 0.58rem 1.08rem;
+    border-radius: 9px;
+    font-size: 0.88rem;
     font-weight: 700;
-    text-decoration: none;
+    text-decoration: none !important;
     box-sizing: border-box;
     max-width: 100%;
+    transition: transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 180ms ease, background 180ms ease;
   }
   .topup-btn.primary {
-    background: #d94826;
+    background: linear-gradient(180deg, #f43f5e 0%, #e11d48 100%);
     color: #ffffff !important;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 6px 18px rgba(225, 29, 72, 0.36), inset 0 1px 0 rgba(255, 255, 255, 0.22);
   }
   .topup-btn.primary:hover {
-    background: #b93819;
+    background: linear-gradient(180deg, #fb7185 0%, #e11d48 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(225, 29, 72, 0.48);
   }
   .topup-btn.secondary {
-    background: rgba(255, 255, 255, 0.1);
-    color: #f7f1ea !important;
-    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: rgba(255, 255, 255, 0.06);
+    color: #f1f5f9 !important;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+  }
+  .topup-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(248, 250, 252, 0.45);
   }
   .topup-disclosure {
-    margin: 0.65rem 0 0;
-    font-size: 0.73rem;
-    line-height: 1.4;
-    color: #b8aa9d;
+    margin: 0.7rem 0 0;
+    font-size: 0.75rem;
+    line-height: 1.42;
+    color: #94a3b8;
   }
 </style>
