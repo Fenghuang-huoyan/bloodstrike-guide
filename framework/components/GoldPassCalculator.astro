@@ -1,8 +1,9 @@
 ---
 /**
  * Interactive Strike Pass 520 Gold Refund & Season Budget Calculator.
- * Upgraded with UI/UX Pro Max high-density tokens, 44px touch targets, SVG semantics, and tabular-nums.
  */
+import { monetizationConfig } from '@site/monetization.config';
+const affUrl = monetizationConfig.lootbarAffiliateUrl.trim();
 ---
 <section class="gold-calc" aria-label="Strike Pass Gold Refund Calculator">
   <div class="calc-head">
@@ -58,6 +59,21 @@
       <strong id="bs-gold-needed">0 Gold</strong>
     </div>
   </div>
+
+  {affUrl && (
+    <div id="bs-calc-cta" style="display:none; margin-top:0.85rem;">
+      <a
+        href={affUrl}
+        target="_blank"
+        rel="sponsored noopener"
+        data-aff-partner="lootbar"
+        data-aff-placement="gold_pass_calculator_shortfall"
+        style="display:inline-flex; align-items:center; justify-content:center; gap:0.45rem; width:100%; min-height:44px; padding:0.6rem 1rem; border-radius:9px; background:#e11d48; color:#fff; font-weight:700; font-size:0.88rem; text-decoration:none; border:1px solid #f43f5e;"
+      >
+        <span id="bs-calc-cta-label">Top Up Missing Gold on LootBar (UID Only) →</span>
+      </a>
+    </div>
+  )}
 </section>
 
 <script is:inline>
@@ -71,6 +87,8 @@
     const neededBox = document.getElementById('bs-needed-box');
     const refundEl = document.getElementById('bs-total-refund');
     const neededEl = document.getElementById('bs-gold-needed');
+    const ctaWrap = document.getElementById('bs-calc-cta');
+    const ctaLabel = document.getElementById('bs-calc-cta-label');
     const presetBtns = document.querySelectorAll('[data-gold-preset]');
 
     function syncPresetActive(val) {
@@ -81,9 +99,9 @@
 
     function update() {
       if (!startInput || !seasonsSelect || !extraInput) return;
-      const start = Math.max(0, parseInt(startInput.value || '0', 10) || 0);
+      const start = Math.min(500000, Math.max(0, parseInt(startInput.value || '0', 10) || 0));
       const seasons = Math.max(1, parseInt(seasonsSelect.value || '1', 10) || 1);
-      const extra = Math.max(0, parseInt(extraInput.value || '0', 10) || 0);
+      const extra = Math.min(100000, Math.max(0, parseInt(extraInput.value || '0', 10) || 0));
 
       const firstPassShortfall = Math.max(0, PASS_REFUND - start);
       const totalExtra = extra * seasons;
@@ -92,15 +110,23 @@
       const totalRefunded = PASS_REFUND * seasons;
 
       const isSelfSustaining = netNeeded === 0 && start >= PASS_REFUND;
-      statusEl.textContent = start >= PASS_REFUND ? 'Self-Sustaining (520+ Gold)' : ('Short by ' + firstPassShortfall.toLocaleString('en-US') + ' Gold');
+      statusEl.textContent = isSelfSustaining
+        ? 'Self-Sustaining (0 Top-Up Needed)'
+        : ('Top-Up Needed (+' + netNeeded.toLocaleString('en-US') + ' Gold)');
       refundEl.textContent = totalRefunded.toLocaleString('en-US') + ' Gold';
       neededEl.textContent = netNeeded.toLocaleString('en-US') + ' Gold';
 
       if (statusBox) {
-        statusBox.className = 'res-stat ' + (start >= PASS_REFUND ? 'status-ok' : 'status-warn');
+        statusBox.className = 'res-stat ' + (isSelfSustaining ? 'status-ok' : 'status-warn');
       }
       if (neededBox) {
         neededBox.className = 'res-stat ' + (isSelfSustaining ? '' : 'status-warn');
+      }
+      if (ctaWrap) {
+        ctaWrap.style.display = netNeeded > 0 ? 'block' : 'none';
+      }
+      if (ctaLabel && netNeeded > 0) {
+        ctaLabel.textContent = 'Top Up ' + netNeeded.toLocaleString('en-US') + '+ Gold via UID on LootBar →';
       }
       syncPresetActive(start);
     }

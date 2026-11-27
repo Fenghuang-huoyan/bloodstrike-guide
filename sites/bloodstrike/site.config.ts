@@ -39,7 +39,7 @@ export const siteConfig = {
   disclaimer:
     'bloodstrike.wiki is an unofficial fan-made guide for Blood Strike. It is not affiliated with, endorsed by, or sponsored by NetEase Games, Valve, or Steam. All game content, names, artwork, and trademarks belong to their respective owners. Redeem codes expire and change without notice — verify in-game. This site does not process top-ups or account recovery. Not responsible for bans, expired codes, or purchase decisions. The support address in the footer is NetEase’s contact from the Steam store page. Mail sent there does not reach the people who edit this wiki.',
   nav: [
-    { href: '/codes', label: 'Codes' },
+    { href: '/codes', label: 'Rewards & Codes' },
     { href: '/top-up', label: 'Top-Up' },
     { href: '/strikers', label: 'Strikers' },
     { href: '/weapons', label: 'Weapons' },
@@ -49,9 +49,10 @@ export const siteConfig = {
   moreNav: [
     { href: '/faq', label: 'FAQ' },
     { href: '/about', label: 'About' },
+    { href: '/privacy', label: 'Privacy' },
   ],
   footerNav: [
-    { href: '/codes', label: 'Codes' },
+    { href: '/codes', label: 'Rewards & Codes' },
     { href: '/top-up', label: 'Gold Top-Up' },
     { href: '/strikers', label: 'Strikers' },
     { href: '/weapons', label: 'Weapons' },
@@ -59,6 +60,7 @@ export const siteConfig = {
     { href: '/modes', label: 'Modes' },
     { href: '/faq', label: 'FAQ' },
     { href: '/about', label: 'About' },
+    { href: '/privacy', label: 'Privacy' },
   ],
   version: {
     label: 'Updated Nov 2026',

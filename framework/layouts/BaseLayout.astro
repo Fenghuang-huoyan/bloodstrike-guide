@@ -58,5 +58,25 @@ const ogImage = new URL(siteConfig.art.ogImage, siteConfig.url).href;
     <Header />
     <slot />
     <Footer />
+    <script is:inline>
+      document.addEventListener('click', (e) => {
+        const a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+        if (!a) return;
+        const href = a.href || '';
+        let partner = a.getAttribute('data-aff-partner') || '';
+        if (!partner) {
+          if (href.includes('lootbar.')) partner = 'lootbar';
+          else if (href.includes('eldorado.')) partner = 'eldorado';
+        }
+        if (partner && typeof window.gtag === 'function') {
+          window.gtag('event', 'affiliate_click', {
+            partner,
+            game: 'blood-strike',
+            placement: a.getAttribute('data-aff-placement') || window.location.pathname,
+            link_url: href,
+          });
+        }
+      });
+    </script>
   </body>
 </html>

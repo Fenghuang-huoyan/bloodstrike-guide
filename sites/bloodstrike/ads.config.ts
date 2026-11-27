@@ -28,7 +28,7 @@ const slots = {
 
 export const adsConfig = {
   network: 'adsterra' as const,
-  enabled: true,
+  enabled: false,
   invokeBase: '',
   /** Site-wide full script URL. A slot `scriptSrc` overrides this. */
   scriptSrc: '',

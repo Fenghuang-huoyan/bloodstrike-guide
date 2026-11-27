@@ -9,7 +9,7 @@ verifiedAgainst: "Official Blood Strike site (blood-strike.com), Steam AppID 319
 quickAnswer:
   - "Legitimate Blood Strike Gold top-ups only require your numeric in-game User ID (UID)—never share your NetEase, Google, Facebook, or Steam password."
   - "Unlocking and maxing out the Graffiti Artist Strike Pass (11/15–12/14) refunds up to 520 Gold, allowing active players to chain future passes from one initial Gold purchase."
-  - "Using verified UID recharge channels such as LootBar typically saves up to ~15% compared to standard mobile app-store regional pricing, with direct in-game mail/balance delivery."
+  - "Third-party UID recharge platforms such as LootBar deliver Gold using only your public numeric UID, supporting regional payment methods without sharing account credentials."
   - "If a top-up is delayed or fails, 90%+ of cases come from mistyping a digit in your UID or picking the wrong server region before checkout."
 sources:
   - label: "Official Blood Strike Website"
@@ -42,7 +42,7 @@ import { monetizationConfig } from '@site/monetization.config';
 
 When buying **Blood Strike Gold** outside the mobile app stores, every recharge method falls into one of two categories:
 
-1. **UID Direct Top-Up (Recommended)**: You copy your numeric **User ID (UID)** from your in-game profile card and complete checkout without ever logging into your game account on an external page. Partner platforms like <a href={monetizationConfig.lootbarAffiliateUrl || monetizationConfig.officialSiteUrl} target="_blank" rel={monetizationConfig.lootbarAffiliateUrl ? "sponsored noopener noreferrer" : "noopener noreferrer"}>LootBar Blood Strike Top-Up</a> deliver Gold straight to your UID, typically offering up to ~15% lower regional bundle rates than mobile store checkout fees.
+1. **UID Direct Top-Up (Recommended)**: You copy your numeric **User ID (UID)** from your in-game profile card and complete checkout without ever logging into your game account on an external page. Third-party affiliate partners like <a href={monetizationConfig.lootbarAffiliateUrl || monetizationConfig.officialSiteUrl} target="_blank" rel={monetizationConfig.lootbarAffiliateUrl ? "sponsored noopener" : "noopener"} data-aff-partner="lootbar">LootBar Blood Strike Top-Up</a> deliver Gold straight to your UID using regional checkout rails—always compare live checkout totals in your local currency before paying.
 2. **Account-Login Top-Up (High Risk — Avoid)**: Any seller or Discord DM asking for your email, password, or verification code to "log in and buy Gold cheaper" puts your account at risk of credential theft or chargeback penalties.
 
 <Callout kind="warn" title="Account Safety & Chargeback Reality Check">
@@ -53,10 +53,10 @@ No third-party guide can guarantee "100% zero risk" under every scenario. In Blo
 
 <div class="table-scroll">
 
-| Factor | In-Game Store (Steam / iOS / Google Play) | Verified UID Top-Up (<a href={monetizationConfig.lootbarAffiliateUrl || monetizationConfig.officialSiteUrl} target="_blank" rel={monetizationConfig.lootbarAffiliateUrl ? "sponsored noopener noreferrer" : "noopener noreferrer"}>LootBar</a>) | Sketchy Login Sellers / "Free Gold" Sites |
+| Factor | In-Game Store (Steam / iOS / Google Play) | Third-Party UID Partner (<a href={monetizationConfig.lootbarAffiliateUrl || monetizationConfig.officialSiteUrl} target="_blank" rel={monetizationConfig.lootbarAffiliateUrl ? "sponsored noopener" : "noopener"} data-aff-partner="lootbar">LootBar</a>) | Sketchy Login Sellers / "Free Gold" Sites |
 | --- | --- | --- | --- |
 | **Credentials Needed** | Logged-in game client | **Numeric UID only** (no password) | Asks for account login or survey tasks |
-| **Typical Cost** | Standard retail + app store tax | Often **~10%–15% lower** on Gold packs | Scam / credential harvesting |
+| **Typical Cost** | Standard retail + app store tax | Live regional bundle pricing (check live checkout page) | Scam / credential harvesting |
 | **Delivery Speed** | Instant | Usually **1–10 minutes** (peak patch days may take longer) | Never arrives or risks chargeback |
 | **Best Use Case** | Small single purchases using Steam Wallet | **520+ Gold Strike Pass** seed or seasonal skin bundles | Never use |
 

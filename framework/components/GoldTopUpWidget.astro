@@ -10,7 +10,7 @@ const primaryHref = isAffiliate ? affUrl : monetizationConfig.officialSiteUrl;
     <div class="topup-title-group">
       <span class="topup-eyebrow">
         <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
-        {isAffiliate ? 'Verified UID Top-Up Partner' : 'Official Strike Pass & Gold Reference'}
+        {isAffiliate ? 'Third-Party UID Top-Up Partner' : 'Official Strike Pass & Gold Reference'}
       </span>
       <h3>Need Gold for the Strike Pass? (520 Gold Full Refund Loop)</h3>
     </div>
@@ -43,8 +43,8 @@ const primaryHref = isAffiliate ? affUrl : monetizationConfig.officialSiteUrl;
 
   <div class="topup-actions">
     {isAffiliate ? (
-      <a class="topup-btn primary" href={primaryHref} target="_blank" rel="sponsored noopener noreferrer">
-        <span>Check Discounted Blood Strike Gold on LootBar</span>
+      <a class="topup-btn primary" href={primaryHref} target="_blank" rel="sponsored noopener" data-aff-partner="lootbar" data-aff-placement="gold_topup_widget">
+        <span>Compare Blood Strike Gold Bundles on LootBar</span>
         <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
       </a>
     ) : (

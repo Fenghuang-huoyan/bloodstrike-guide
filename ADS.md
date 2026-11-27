@@ -1,16 +1,7 @@
-# Adsterra — bloodstrike.wiki
+# Ads — bloodstrike.wiki
 
-Native Banner is wired for the homepage and guide pages, immediately after Quick Answer (`afterQuickAnswer` in `sites/bloodstrike/ads.config.ts`). The script is rendered once on those pages. The 404 page does not include the slot.
+Adsterra Native Banner is **disabled** (`enabled: false` in `sites/bloodstrike/ads.config.ts` per owner decision on 2026-11-28). No `bauval.org` or third-party ad network script loads on any page.
 
-This zone uses a full script URL. There is no `/invoke.js` suffix, and `invokeBase` stays empty so the old host is not hardcoded.
+Monetization on `bloodstrike.wiki` uses compliant UID-only affiliate links (`sites/bloodstrike/monetization.config.ts` → LootBar `aff_short=dropcodex`) paired with the interactive 520 Gold Strike Pass calculator.
 
-| Field | Value | Used in the script? |
-| --- | --- | --- |
-| Zone key | `467253c4fc76c8555648eab896f019f4` | Yes. `afterQuickAnswer.id`, and the container id `container-467253c4fc76c8555648eab896f019f4` |
-| Script src | `https://bauval.org/21/467253c4fc76c8555648eab896f019f4` | Yes. Full `afterQuickAnswer.scriptSrc` |
-| Website ID | `6144484` | No. Ops note only |
-| Placement ID | `31881711` | No. Ops note only |
-
-Adult and sensitive categories stay off.
-
-`analytics.gaId` in `sites/bloodstrike/site.config.ts` is `G-YZ05QF1DFN`. The base layout loads that GA4 id with gtag on every page, including 404. There is no Google site-verification meta tag.
+`analytics.gaId` in `sites/bloodstrike/site.config.ts` is `G-YZ05QF1DFN`. The base layout loads GA4 via gtag and tracks outbound partner clicks via `affiliate_click`.
